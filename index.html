@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Senplus</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:light|Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="asset/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="asset/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+	<!-- for-mobile-apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Oulu Market" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //for-mobile-apps -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="asset/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+	<style>
+		body {
+		    margin: 0px;
+		}
+		* { font-family: 'Roboto', sans-serif;
+			box-sizing: border-box;
+		}
+		.hero-container  {
+			position: relative;
+			height: 100vh;
+		}
+		.white-to-transparent-gradient {
+			position: absolute;
+			height: 40vh;
+			width: 100%;
+		    background-color: white;
+		    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 30%, rgba(255,255,255,0) 100%);
+		    z-index: 1;
+		}
+		.logo {
+			width: 100px;
+			height: 132px;
+			position: relative;
+			left: 17%;
+		}
+		.social {
+			position: absolute;
+			width: 161px;
+			height:29px;
+			right : 15%;
+		}
+		.nav-bar {
+			position: relative;
+			display: flex;
+			float: right;
+			top: 67px;
+			right: 15%;
+		}
+		.nav-bar span {
+			margin-right:30px;
+			color: rgb(0,102,21);
+			font-size:12.5px;
+
+		}
+		.nav-bar img{
+		  width: 20px;
+		  height:10px;
+		}
+		.hero-slider {
+			position: absolute;
+			height: 100vh;
+			z-index: 0;
+
+		}
+		.hero {
+			background: url("image/hero.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			height: 100%;
+			z-index: 0;
+		}
+		.hero-slider .owl-stage-outer,.about-senplus-carousel .owl-stage-outer {
+			height: inherit;
+		}
+		.khach-hang-carousel .owl-stage-outer{
+			
+		}
+		.hero-slider .owl-stage,.about-senplus-carousel .owl-stage{
+			height: inherit;
+		}
+		.hero-slider .owl-item,.about-senplus-carousel .owl-item{
+			height: inherit;
+		}
+		.khach-hang-carousel .owl-prev {
+			width: 20px;
+		    height: 38px;
+		    position: absolute;
+		    top: 10%;
+		    left: -100px;
+		    margin-right: 20px !important;
+		    display: block !important;
+		    border:0px solid black;
+		    outline: none;
+		}
+		.hero-slider .owl-prev{
+		    width: 37px;
+		    height: 70px;
+		    position: absolute;
+		    top: 40%;
+		    margin-left: 20px !important;
+		    display: block !important;
+		    border:0px solid black;
+		    outline: none;
+		}
+		.hero-slider .owl-prev:hover, .khach-hang-carousel .owl-prev:hover{
+			background:none !important;
+		}
+		.hero-slider .owl-next:hover, .khach-hang-carousel .owl-next:hover {
+			background:none !important	;
+		}
+		.hero-slider .owl-next{
+		    width: 37px;
+		    height: 70px;
+		    position: absolute;
+		    top: 40%;
+		    margin-right: 20px !important;
+		    right:0px;
+		    display: block !important;
+		    border:0px solid black;
+		    outline: none;
+		}
+		.khach-hang-carousel .owl-next{
+			width: 20px;
+		    height: 38px;
+		    position: absolute;
+		    top: 10%;
+		    margin-right: 20px !important;
+		    right: -100px;
+		    display: block !important;
+		    border:0px solid black;
+		    outline: none;
+		}
+		.hero-arrow {
+			height: inherit;
+			outline: none;
+		}
+		.hero-slider .owl-dots {
+			width: 100%;
+			position: absolute;
+			bottom : 12%;
+		}
+		.hero-slider.owl-theme .owl-dots .owl-dot span {
+			width: 5px;
+			height:5px;
+			background-color: rgb(142,143,143);
+			
+		}
+		.hero-slider.owl-theme .owl-dots .owl-dot {
+			position: relative;
+			outline: none;
+			margin-left: 5px;
+			margin-right: 5px;
+		}
+		.hero-slider.owl-theme .owl-dots .owl-dot.active span {
+			background-color: white;	
+		}
+		.hero-slider.owl-theme .owl-dots .owl-dot.active:after{
+			position: absolute;
+			content: '';
+			top: 0.3px;
+			left:2px;
+			width: 7.5px;
+			height: 7.5px;
+			padding: 1.5px !important;
+			border-radius: 50%;
+			background-color: transparent;
+			border: 2.25px solid white;	
+		}
+		.yellow-flower {
+			position: absolute;
+			bottom: 0px;
+			left: 50%;
+			width: 62px;
+			height: 62px;
+			transform: translate(-50%,50%);
+		}
+		.white-flower {
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.main-container {
+			position: relative;
+			padding-top: 75px;
+			padding-left:30px;
+			padding-right: 30px;
+		}
+		.user-story{
+			position: absolute;
+			right: 100px;
+			bottom: 150px;
+			font-size: 17.5px;
+			width: 30%;
+			color: white;
+		}
+		.cau-chuyen-thuong-hieu {
+			margin:75px 20px 0px 20px;
+		}
+		.grey-line {
+			position: relative;
+			width: 87.5px;
+			height:5px;
+			margin-top: 10px;
+			margin-bottom: 9px;
+			border-bottom: 2.5px solid rgb(201,203,205);
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.grey-line-light{
+			position: relative;
+			width: 40px;
+			height:1px;
+			margin-top: 5px;
+			margin-bottom: 5px;
+			border-bottom: 1px solid rgb(105,109,115);	
+		}
+		.grey-line-strong {
+			position: relative;
+			width: 87.5px;
+			height:5px;
+			margin-top: 10px;
+			margin-bottom: 9px;
+			border-bottom: 2.5px solid rgb(140,145,149);
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.title-thuong-hieu {
+			position: relative;
+			font-size: 17.5px;
+			color: rgb(210,184,148);
+			text-align: center;
+		}
+		.thuong-hieu {
+			font-size: 37.5px;
+		}
+		.kien-tao-thuong-hieu{
+			margin-top: 60px;
+			font-size: 33px;
+		}
+		.kien-tao-thuong-hieu li{
+			font-size: 17px;
+		}
+		.flex1{
+			position: relative;
+			width: 810px;
+			display: flex;
+			flex-wrap: wrap;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.flex1 ul, .flex2 ul{
+			margin:0px;
+			line-height: 35px;
+			position: relative;
+		  	top: 50%;
+		    transform: translateY(-50%);
+		}
+		.flex2  ul.right{
+			position: absolute;
+			right: 15px;
+		}
+		.text-box {
+			width: 50%;
+			position: relative;
+		}
+		.div2{
+			position: relative;
+		}
+		.div2::after {
+			position: absolute;
+		    content: '';
+		    width: 1px;
+		    height: 50%;
+		    top: 50%;
+		    transform: translateY(-50%);
+		    left: 0;
+		    z-index: -1;
+		    box-shadow: 0px 0px 15px 3px rgba(143, 146, 150, 0.75);
+		}
+		.flex1 li, .flex2 li {
+			color: rgb(180,131,48);
+		}
+		.flex1 .bullet,.flex2 .bullet {
+			color: rgb(143,145,149);
+		}
+		.icon-flex div{
+			min-width: 200px;
+		}
+		.icon-flex{
+			width: 100%;
+			max-width: 1000px;
+			margin: 0 auto;
+			display: flex;
+			flex-wrap: wrap;
+			position: relative;
+		}
+		.thuong-hieu-icon-container {
+			margin-top: 50px;
+		}
+		.thuong-hieu-icon-container span {
+			font-size: 17px;
+			color: rgb(210,184,148);
+		}
+		.middle{
+			width: 33.33333%;
+			text-align: center;		
+			padding: 40px;
+		}
+		.flex2{
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.flex-image-container{
+			width: 50%;
+		}
+		.resize {
+			max-width: 100%;
+		}
+		.phuong-phap-hoc-moi {
+			position: relative;
+			margin-top: 10vh;
+			height: 80vh;
+			width: 100%;
+			background: url("image/phuong-phap-hoc.jpg");
+			background-size: cover;
+			background-position: center;
+		}
+		.phuong-phap-content {
+			width: 25%;
+			position: absolute;
+			left: 5%;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		.phuong-phap-content p{
+			font-size: 35px;
+		}
+		.green-button {
+			font-size: 15px;
+			text-align: left !important;
+			width: 200px;
+			position: relative;
+			padding-left: 20px;
+			margin-bottom: 50px;
+			line-height: 40px;
+			height: 40px;
+			border: none;
+			background-color: rgb(45,118,47);
+			color: rgb(212,212,212);
+		}
+		.green-button:after{
+			position: absolute;
+			top: 5px;
+			right: 15px;
+			content: "";
+			height: 30px;
+			width: 30px;
+			border-radius: 50%;
+			background-color: rgb(61,131,57);
+		}
+		.green-button:before{
+			z-index: 1;
+			width: 14px;
+			height: 20px;
+			position: absolute;
+			top: 12px;
+			right: 20px;
+			content: "";
+			background: url("image/button-arrow.jpg");
+		}
+		.phuong-phap-hoc-nav{
+			color: rgb(127,138,144);
+			font-size:12px;
+		}
+		.phuong-phap-hoc-nav span {
+			margin-right: 15px;
+		}
+		.sub-sections {
+			position: relative;
+			padding-top: 0;
+			padding-right: 8%;
+			padding-bottom: 0;
+			padding-left : 9%;
+		}
+		.flex-sections{
+			display: flex;
+		}
+		.sub-image{
+			width: 100%;
+		}
+		.sub-divs{
+			margin: 40px 20px 20px 0px;
+			width: 33.333333%;
+		}
+		.sub-divs p{
+			color: rgb(201,145,53);
+		}
+		.other{
+			height: 60px;
+			position: relative;
+			text-align: center;
+			color:rgb(92,96,104);
+			margin-bottom: 50px;
+		}
+		.other p {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			padding: 10px 20px 10px 20px;
+			border: 2px solid rgb(201,203,205);
+		}
+		.about-senplus-title{
+			color: rgb(180,131,48);
+			text-align: center;
+			font-size: 35px;
+			margin-bottom: 20px;
+		}
+		.about-senplus-content {
+			height: 78vh;
+		}
+		.about-senplus-carousel{
+			height: inherit;
+		}
+		.about-senplus-item {
+			position: relative;
+			height: inherit;
+			background: url("image/about-senplus.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			text-align: center;
+		}
+		.about-senplus-item p {
+			font-weight: 300;
+			font-size: 25px;
+			position: absolute;
+			bottom: 15%;
+			color: white;
+			width: 40%;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.fa-quote-left::before, .fa-quote-right::before {
+			position: absolute;
+			font-size: 35px;
+			bottom: 30%;
+			color: white;
+		}
+		.fa-quote-left::before {
+			left:20%;
+		}
+		.fa-quote-right::before {
+			right: 20%;
+		}
+		.chuyen-nghe-container{
+			position: relative;
+		}
+		.chuyen-nghe{
+			margin-bottom: 30px;
+			margin-top: 30px;
+		}
+		.chuyen-nghe-title {
+			position: relative;
+		}
+		.chuyen-nghe-title p{
+
+			color: rgb(180,131,48);
+			font-size: 35px;
+			margin: 7px 0 0 0;
+			padding-top:7px;
+		}
+		.sub-text{
+			position: absolute;
+			top: 0;
+			right:0;
+			width: 120px;
+		}
+		.sub-text p{
+			position: relative;
+			text-align: right;
+			font-size: 14px;
+			color: rgb(143,146,150);
+			margin: 0;
+			padding-top:7px;
+		}
+		.grey-line-absolute{
+			padding: 0;
+			position: absolute;
+			height: 1px;
+			width: 80px;
+			border-bottom:2.5px solid rgb(201,203,205);
+		}
+		.grey-line-absolute.left{
+		}
+		.right{
+			float: right;
+		}
+		.grey-line-full {
+			position: relative;
+			width: 100%;
+			height:5px;
+			border-bottom: 2.5px solid rgb(201,203,205);
+		}
+		.grey-line-absolute.right{
+			right:0;
+		}
+		.black{
+			color: black;
+		}
+		.small{
+			width: 100%;
+
+		}
+		.flex-container {
+			position: relative;
+			padding-left: 15%;
+			padding-right: 15%;
+		}
+		.flex{
+			display: flex;
+			justify-content: space-around;
+		}
+	    .relative-div{
+	    	position: relative;
+	    }
+	    .khach-hang{
+	    	text-align:center; 
+	    	color: rgb(180,131,48);
+    		font-size: 35px;
+	    }
+	    .khach-hang-carousel{
+	    	width: 50%;
+	    	position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+			top: 30px;
+	    }
+	    .footer-container{
+	    	background-color: rgb(73,77,85);
+	    	height: 30vh;
+
+	    }
+	    .footer-content{
+	    	height:inherit;
+	    	display: flex;
+	    	position: absolute;
+	    	left: 50%;
+	    	transform: translateX(-50%);
+	    }
+	    .carousel-container{ 
+	    	padding-bottom: 75px;
+	    }
+	   	.vertically-middle{
+	    	position: relative;
+	    	top: 50%;
+	    	transform: translateY(-50%);
+	    }
+	    .float-right{
+	    	float: right;
+	    }
+	    footer{
+	    	font-size: 12px;
+	    	color: rgb(137,108,67);
+	    }
+	    footer  ul{
+	    	margin: 0;
+	    	padding-left:0;
+	    	list-style-type: none;
+	    }
+	    footer p{
+	    	margin: 0;
+	    }
+	    .space{
+	    	width: 5%;
+	    }
+	    .image-middle {
+	    	position: relative;
+	    	top: 50%;
+	    	transform: translateY(-50%);
+	    }
+	    .mobile {
+	    	display: none;
+	    	position: absolute;
+	    	color: white;
+	    	font-size: 10px;
+	    	right: 30px;
+	    	top: 30px;
+	    }
+	    .mobile-content {
+	    	visibility: hidden;
+	    	opacity: 0;
+	    	width: 100%;
+	    	position: absolute;
+	    	color: rgb(0,102,21);
+	    	font-size: 20px;
+	    	left: 0;
+	    	background-color:white;
+	    	border-radius: 10px;
+	    	top: 20px;
+	    	transition: all 0.3s ease-in-out;
+	    	z-index: 0;
+	    }
+	    .noscroll {
+	    	overflow: hidden;
+	    }
+	    .overlay {
+	    	visibility: hidden;
+	    	position: fixed;
+	    	background-color: rgb(0,0,0);
+	    	opacity:0;
+	    	right:0;
+	    	left:0;
+	    	width: 100%;
+	    	height: 100vh;
+	    	transition: all 0s ease;
+	    	z-index: 1;
+		}
+	    .mobile.clicked .overlay{
+	    	visibility: visible;
+	    	opacity:0.7;
+	    	transition: all 0.3s ease;
+	    }
+	    .mobile.clicked+.mobile-content{
+	    	visibility: visible;
+	    	top: 90px;
+	    	opacity: 1;
+	    	z-index: 2;
+	    }
+	    .mobile-content li {
+	    	margin: 30px;
+	    }
+	    .mobile-content ul{
+	    	text-align: center;
+	    	padding: 0;
+	    	list-style-type: none;
+	    }
+	    .icon{
+	    	position: relative;
+	    	height: 21px;
+	    	z-index: 3;
+	    }
+	    .icon span{
+	    	margin: 3px;
+	    	display: block;
+	    	width: 40px;
+	    	background-color: white;
+	    	height: 5px;
+	    	border-radius: 5px;
+	    	border: 1px solid white;
+	    	transition: all 0.3s ease-in-out;
+	    }
+	    .clicked .stick1{
+	    	transform: rotate(45deg);
+	    	position: absolute;
+	    	top:8px;
+	    }
+	    .clicked .stick2{
+	    	opacity: 0;
+	    	transition: all 0s ease;
+	    }
+		.clicked .stick3{
+			transform: rotate(-45deg);
+	    	position: absolute;
+	    }
+	    @media only screen and (max-width: 768px) {
+	    	.sub-divs {
+	    		min-width: 250px;
+	    		width: 50%;
+	    		margin: 0 auto;
+	    	}
+	    	.flex-container {
+	    		width: 100%;
+	    		flex-direction: column;
+	    	}
+	    	.flex-sections {
+	    		margin-top: 50px;
+	    		flex-direction: column;
+	    	}
+	    	.flex {
+	    		flex-direction: column;
+	    	}
+	    	.nav-bar {
+	    		right: 10%;
+	    	}
+	    }
+	    @media only screen and (max-width: 610px) {
+	    	.phuong-phap-content {
+	    		width: 80%;
+	    	}
+	    	.middle {
+	    		width: 50%;
+	    	}
+	    }
+	    @media only screen and (max-width: 427px) {
+	    	.white-to-transparent-gradient {
+	    		 background-color: white;
+		    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 30%, rgb(0,0,0,0) 100%);
+		    z-index: 1;
+	    	}
+	    	.icon-flex {
+	    	 	flex-direction: column;
+	    	}
+	    	.middle {
+	    		margin: 0 auto;
+	    	}
+	    	.flex-image-container {
+	    		display:none;
+	    	}
+	    	.kien-tao-thuong-hieu {
+	    		text-align: center;
+	    	}
+	    	.kien-tao-thuong-hieu ul {
+	    		list-style-type: none;	
+	    		padding: 0;
+	    	}
+	    	.text-box{
+	    		width: 100%;
+	    	}
+	    	.text-box::after{
+	    		display: none;
+	    	}
+	    	.sub-sections {
+	    		margin-top: 50px;
+	    	}
+	    	.flex-sections {
+	    		flex-wrap: wrap;
+	    	}
+	    	.sub-image {
+	    	}
+	    	.flex {
+	    		flex-wrap: wrap;
+	    	}
+	    	img.small {
+	    	}
+	   		.chuyen-nghe-title {
+	   			position: relative;
+	   		}
+	   		.sub-text p{
+	   			font-size: 10px !important;
+	   		}
+	    	.chuyen-nghe-title p, .khach-hang {
+	    		font-size: 20px;
+	    	}
+	    	.khach-hang-carousel {
+	    		width: 80%;
+	    	}
+	    	.flex2 ul.right {
+	    		width: 100%;
+	    		position: relative;
+	    		right: auto;
+	    	}
+	    	.white-flower {
+	    		left: auto;
+	    		transform: translate(0,0);
+	    	}
+	    	.logo {
+	    		display: none;
+	    	}
+	    	.social {
+	    		display: none;
+	    	}
+	    	.user-story {
+	    		width: 60%;
+	    		right: 9px;
+	    		bottom: 50px;
+	    	}
+	    	.footer-content{
+	    		width: 95%;
+	    		flex-wrap: wrap;
+	    	}
+	    	.space.responsive{
+	    		display: none;
+	    	}
+	    	.space{
+	    		width: 15%;
+	    	}
+	    	.nav-bar {
+	    		display: none;
+	    	}
+	    	.mobile{
+	    		display: block;
+	    	}
+	    }
+	    @media only screen and (max-width: 377px) {
+	    	.footer-container{
+	    		height: 35vh;
+	    	}
+	    	img.image-middle {
+	    		width: 50px;
+	    	}
+	    }
+	    @media only screen and (max-width: 320px) {
+	    	.about-senplus-item p {
+	    		width: 50%;
+	    	}
+	    	.footer-container{
+	    		height: 45vh;
+	    	}
+	    	img.image-middle {
+	    		width: 50px;
+	    	}
+			.yellow-flower-container {
+	    		height: 75px;
+	    		width: 90%;
+	    	}
+	    	.yellow-flower-container .image-middle{
+	    		position: absolute;
+	    		top: 20px;
+	    		left: 50%;
+	    		transform: translateX(-50%);
+	    	}
+	    }
+</style>
+</head>
+<body>
+	<div class="hero-container">
+		<div class="white-to-transparent-gradient">
+			<img class="logo" src="image/logo.jpg">
+			<img class="social" src="image/haha.jpg">
+			<div class="mobile">
+				<div class="overlay"></div>
+				<div class="icon">
+					<span class="stick1"></span>
+					<span class="stick2"></span>
+					<span class="stick3"></span>
+				</div>
+			</div>
+			<div class="mobile-content">
+				<ul>
+					<li data-id=".about-senplus-title"><strong>VE SENPLUS</strong></li></span>
+					<div class="grey-line-full"></div>
+					<li data-id=".yellow-flower"><strong>DICH VU</strong></li></span>
+						<div class="grey-line-full"></div>
+					<li data-id=".chuyen-nghe"><strong>CHUYEN NGHE</strong></li></span>
+						<div class="grey-line-full"></div>
+					<li data-id=".khach-hang"><strong>KHACH HANG</strong></li></span>
+				</ul>
+			</div>
+			<nav class="nav-bar">
+				<div>
+					<span><strong>VE SENPLUS</strong></span>
+					<span><strong>DICH VU</strong></span>
+					<span><strong>CHUYEN NGHE</strong></span>
+					<span><strong>KHACH HANG</strong></span>
+					<img src="image/SenPlus-homepage_TV-new_03.jpg">
+				</div>
+			</nav>
+		</div>
+		<div class="owl-carousel hero-slider owl-theme">
+			<div class="hero"><p class="user-story">Cau chuyen khach hang:<br><br>
+			Doan motion clip ngan ve hoat dong hau truong cua SenPlus trong mot chuong trinh  thuc hien cho khack hang<br>
+			<br><br>
+			Motion Story nay se duoc cap nhat theo tung du an</p></div>
+						<div class="hero"><p class="user-story">Cau chuyen khach hang:<br><br>
+			Doan motion clip ngan ve hoat dong hau truong cua SenPlus trong mot chuong trinh  thuc hien cho khack hang<br>
+			<br><br>
+			Motion Story nay se duoc cap nhat theo tung du an</p></div>
+						<div class="hero"><p class="user-story">Cau chuyen khach hang:<br><br>
+			Doan motion clip ngan ve hoat dong hau truong cua SenPlus trong mot chuong trinh  thuc hien cho khack hang<br>
+			<br><br>
+			Motion Story nay se duoc cap nhat theo tung du an</p></div>						<div class="hero"><p class="user-story">Cau chuyen khach hang:<br><br>
+			Doan motion clip ngan ve hoat dong hau truong cua SenPlus trong mot chuong trinh  thuc hien cho khack hang<br>
+			<br><br>
+			Motion Story nay se duoc cap nhat theo tung du an</p></div>
+						<div class="hero"><p class="user-story">Cau chuyen khach hang:<br><br>
+			Doan motion clip ngan ve hoat dong hau truong cua SenPlus trong mot chuong trinh  thuc hien cho khack hang<br>
+			<br><br>
+			Motion Story nay se duoc cap nhat theo tung du an</p></div>
+						<div class="hero"><p class="user-story">Cau chuyen khach hang:<br><br>
+			Doan motion clip ngan ve hoat dong hau truong cua SenPlus trong mot chuong trinh  thuc hien cho khack hang<br>
+			<br><br>
+			Motion Story nay se duoc cap nhat theo tung du an</p></div>
+		</div>
+		<img class="yellow-flower" src="image/yellow-flower-hero.png">
+	</div>
+		<div class="cau-chuyen-thuong-hieu">
+			<div class="grey-line"></div>
+			<div class="title-thuong-hieu">
+				<span>Chung toi ke nhung cau chuyen ve<br><span class="thuong-hieu"><strong>THUONG HIEU</strong><span></span>
+			</div>
+		</div>
+		<div class="thuong-hieu-icon-container">
+			<div class="icon-flex">
+				<div class="middle">
+					<img src="image/kien-tao.jpg">
+					<br>
+					<span>KIEN TAO</span>
+				</div>
+				<div  class="middle">
+					<img src="image/lan-toa.jpg">
+					<br>
+					<span>LAN TOA</span>
+				</div>
+				<div class="middle">
+					<img src="image/gia-tang-gia-tri.jpg">
+					<br>
+					<span>GIA TANG GIA TRI</span>				
+				</div>
+			</div>
+		</div>
+		<div class="kien-tao-thuong-hieu">
+			<img class="white-flower" src="image/white-flower.jpg">
+			<div class="title-thuong-hieu">
+				<span class="kien-tao-thuong-hieu">KIEN TAO THUONG HIEU<span>
+			</div>
+			<div class="grey-line-strong"></div>
+			<div class="kien-tao-thuong-hieu-container">
+				<div class="flex2">
+					<div class="flex-image-container">
+						<img class="resize right" src="image/lotus.jpg">
+					</div>
+					<div class="text-box div2">
+						<ul style="">
+							<li><span class="bullet">Nghien cuu thi truong</span></li>
+							<li><span class="bullet">Cau chuyen va hinh anh thuong hieu</span></li>
+							<li><span class="bullet">Xay dung bo nhan dien thuong hieu</span></li>
+							<li><span class="bullet">Xay dung chien luoc</span></li>
+							<li><span class="bullet">Lap ke hoach trien khai</span></li>
+						</ul>
+					</div>					
+				</div>
+			</div>
+		</div>
+		<div class="kien-tao-thuong-hieu">
+			<img class="white-flower" src="image/white-flower.jpg">
+			<div class="title-thuong-hieu">
+				<span class="kien-tao-thuong-hieu">LAN TOA GIA TRI THUONG HIEU<span>
+			</div>
+			<div class="grey-line-strong"></div>
+			<div class="kien-tao-thuong-hieu-container">
+				<div class="flex2">
+					<div class="text-box">
+						<ul class="right">
+							<li><span class="bullet">Truyen thong da phuong tien</span></li>
+							<li><span class="bullet">To chuc san xuat TVC, Tivi show</span></li>
+							<li><span class="bullet">Bien Bang quang cao</span></li>
+							<li><span class="bullet">To chuc su kien</span></li>
+						</ul>
+					</div>	
+					<div class="div2 flex-image-container">
+						<img class='resize' src="image/blossoming-lotus.jpg">
+					</div>				
+				</div>
+			</div>
+		</div>
+		<div class="kien-tao-thuong-hieu">
+			<img class="white-flower" src="image/white-flower.jpg">
+			<div class="title-thuong-hieu">
+				<span class="kien-tao-thuong-hieu">GIA TANG GIA TRI<span>
+			</div>
+			<div class="grey-line-strong"></div>
+			<div class="kien-tao-thuong-hieu-container">
+				<div class="flex2">
+					<div class="flex-image-container">
+						<img class='resize right' src="image/final-lotus.jpg">
+					</div>	
+					<div class="div2 text-box">
+						<ul>
+							<li><span class="bullet">Lien ket thuong hieu</span></li>
+							<li><span class="bullet">Tu van trach nhiem</span></li>
+							<li><span class="bullet">Xay dung cong dong</span></li>
+							<li><span class="bullet">Dao tao</span></li>
+						</ul>
+					</div>				
+				</div>
+			</div>
+		</div>
+	<div class="phuong-phap-hoc-moi">
+		<div class="phuong-phap-content">
+			<p><strong>Nang cao ky nang bang phuong phap hoc moi</strong></p>
+			<button class="green-button">Bat dau ngay</button>	
+			<nav class="phuong-phap-hoc-nav">
+				<span>Chi tiet khoa hoc</span>
+				<span>Lich hoc</span>
+				<span>Giang vien</span>
+			</nav>
+		</div>
+	</div>
+	<div class="sub-sections">
+		<div class="flex-sections">
+			<div class="dao-tao-online sub-divs">
+				<img class="sub-image" src="image/dao-tao-online.jpg">
+				<p>
+					<strong>Dao tao online - Tuong lai cua giao duc trong cach mang cong nghe?</strong>
+				</p>
+			</div>
+			<div class="hoc-online sub-divs">
+				<img class="sub-image" src="image/hoc-online.jpg">
+				<p><strong>Kinh nghiem hoc Online: Can bang viec hoc va nhung van de quan tam</strong></p>
+			</div>
+			<div class="tao-dam sub-divs">
+				<img class="sub-image" src="image/dao-tao-online.jpg">
+				<p><strong>Su kien toa dam: Phong thai lanh dao va nhung lua chon cua ban</strong></p>
+			</div>
+		</div>
+	</div>
+	<div class="other">
+		<p>thong tin dao tao khac</p>
+	</div>
+	<div class="about-senplus-title">
+		<div class="grey-line"></div>
+		<strong>VE SENPLUS</strong>
+	</div>
+	<div class="about-senplus-content">
+			<div class="about-senplus-carousel owl-carousel">
+				<div class="about-senplus-item">
+					<i class="fas fa-quote-left"></i><i class="fas fa-quote-right"></i>
+					<p>Chung toi sinh ra voi su menh tro thang nguoi ke nhung cau chuyen ve thuong hieu nham gia tang gia tri cua Doanh nghiep</p>
+				</div>
+				<div class="about-senplus-item">
+					<i class="fas fa-quote-left"></i><i class="fas fa-quote-right"></i>
+					<p>Chung toi sinh ra voi su menh tro thang nguoi ke nhung cau chuyen ve thuong hieu nham gia tang gia tri cua Doanh nghiep</p>
+				</div>
+				<div class="about-senplus-item">
+					<i class="fas fa-quote-left"></i><i class="fas fa-quote-right"></i>
+					<p>Chung toi sinh ra voi su menh tro thang nguoi ke nhung cau chuyen ve thuong hieu nham gia tang gia tri cua Doanh nghiep</p>
+				</div>
+			</div>
+	</div>
+	<div class="chuyen-nghe-container">
+				<div class="chuyen-nghe">
+					<div class="flex-container">
+						<div class="chuyen-nghe-title">
+						<div class="grey-line-absolute left"></div>
+						<p>CHUYEN NGHE</p>
+						<div class="sub-text">
+							<div class="relative-div">
+								<div class="grey-line-absolute right"></div>
+								<p>Nhung cau chuyen truyen cam hung</p>
+							</div>
+						</div>
+					</div>
+						<div class="flex">
+							<div class="sub-divs black">
+								<img class="small" src="image/linh.jpg">
+								<p><strong>Cau chuyen Hoang Thuy Linh "hoi sinh" tu tro tan: Dap canh bang su tu te</strong></p>
+							</div>
+							<div class="sub-divs black">
+								<img class="small" src="image/phap.jpg">
+								<p><strong>Tran Dang Khoa va hanh trinh di quanh the gioi: Paris moi chi la tram dung dau tien</strong></p>
+							</div>
+							<div class="sub-divs black">
+								<img class="small" src="image/vu.jpg">
+								<p><strong>Chau Thanh Vu: Viet tiep hanh tring truyen cam hung bang... kinh te vi mo</strong></p>
+							</div>					
+						</div>
+					</div>			
+				</div>
+			</div>
+			<div class="carousel-container">
+				<div class="khach-hang">
+					<div class="grey-line"></div>
+					KHACH HANG
+				</div>
+				<div class="khach-hang-carousel owl-carousel">
+					<div>
+						<img src="image/mobifone.jpg">
+					</div>
+					<div>
+						<img src="image/vietcombank.jpg">
+					</div>
+					<div>
+						<img src="image/thienthao.jpg">
+					</div>
+					<div>
+						<img src="image/baoviet.jpg">
+					</div>
+				</div>
+			</div>
+			<footer>
+				<div class="footer-container">
+					<div class="footer-content">
+						<div class="yellow-flower-container">
+							<img class="image-middle" src="image/yellow-flower-footer.png">
+						</div>
+						<div>
+							<p class="vertically-middle">
+							<span>Toa nha Talico. 22 Ho Giam, Dong Da, Ha Noi, Viet Nam<br>Tel: 024.3941.2585 | info@senplus.vn</span>
+							</p>
+						</div>
+						<div class="space responsive"></div>
+						<div class="space responsive"></div>
+						<div class="float-right">
+								<ul class="vertically-middle">
+									<strong>Thuong hieu</strong>
+									<div class="grey-line-light left"></div>
+									<li>Kien tao</li>
+									<li>Lan toa</li>
+									<li>Gia tang gia tri</li>
+								</ul>
+						</div>
+						<div class="space"></div>
+						<div class="float-right">
+								<ul class="vertically-middle">
+									<li><strong>Ve Senplus</strong></li>
+									<li><strong>Chuyen nghe</strong></li>
+									<li><strong>Khach hang</strong></li>
+								</ul>
+							</p>
+						</div>
+						<div class="space"></div>
+						<div class="float-right">
+							<div class="vertically-middle"><img class="social-footer" src="image/social-footer.jpg"></div>	
+						</div>
+					</div>
+				</div>
+			</footer>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		  	$('.hero-slider').owlCarousel({
+			     items: 1,
+				 autoplay: true,
+				 nav: true,
+				 loop:true,
+				 dotsEach: true,
+				 navText : ['<img class="hero-arrow" src="image/left.png">','<img class="hero-arrow" src="image/right.png">']
+			});
+			$('.about-senplus-carousel').owlCarousel({
+			     items: 1,
+				 autoplay: true,
+				 nav: false,
+				 loop:true,
+				 dots:false
+			});
+			$('.khach-hang-carousel.owl-carousel').owlCarousel({
+			    loop:true,
+			    responsiveClass:true,
+			    navText : ['<img class="hero-arrow" src="image/left.png">','<img class="hero-arrow" src="image/right.png">'],
+			    dots:false,
+			    autoplay:true,
+			    responsive:{
+			    	200:{
+			    		margin: 10,
+			            items:2,
+			            nav:false,
+			        },
+			        600:{
+			        	margin:100,
+			            items:2,
+			            nav:false,
+			        },
+			        1280:{
+			        	margin:100,
+			            items:3,
+			            nav:true,
+			        }
+			    }
+			});
+			$(".overlay").click(function(event) {
+					$(".mobile").toggleClass('clicked');
+					$("body").toggleClass('noscroll');
+			});
+			$(".mobile .icon").click(function(event){
+				$(this).parent().toggleClass('clicked');
+				$("body").toggleClass('noscroll');
+			});
+
+			$(".mobile-content li").click(function(event) {
+				$(".mobile").toggleClass('clicked');
+				$("body").toggleClass('noscroll');
+				var ele = $(this).data("id");
+			    $('html, body').animate({
+			        scrollTop: $(ele).offset().top
+			    	}, 1000);
+				});
+			});
+	</script>
+</body>
+</html>

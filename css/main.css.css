@@ -1,0 +1,19 @@
+body, html {
+	height: 100%;
+	width: 100%;}
+* { box-sizing: border-box;
+	border: 1px solid black; }
+.top-bar-content {
+	margin: 0 auto;
+	width: 55%;
+}
+
+.fb { color: blue; }
+.twitter { color: skyblue; }
+.google { color: red; }
+.symbol{ position: relative;
+		 right:0px;
+}
+.icon-container {
+}
+.icon{ float: right; }	
